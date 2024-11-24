@@ -16,6 +16,13 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: '17'
+          distribution: 'temurin' # Specify the distribution (e.g., temurin, zulu, liberica)
+          check-latest: false
+          server-id: github
+          server-username: GITHUB_ACTOR
+          server-password: ${{ secrets.GITHUB_TOKEN }}
+          overwrite-settings: true
+      
 
       - name: Build and test application
         run: |
