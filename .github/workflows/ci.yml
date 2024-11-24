@@ -22,7 +22,9 @@ jobs:
           server-username: GITHUB_ACTOR
           server-password: ${{ secrets.GITHUB_TOKEN }}
           overwrite-settings: true
-      
+
+      - name: Ensure Maven Wrapper is executable
+        run: chmod +x ./mvnw
 
       - name: Build and test application
         run: |
